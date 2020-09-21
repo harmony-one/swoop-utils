@@ -1,0 +1,33 @@
+{
+  "name": "@harmony-swoop/utils",
+  "version": "1.0.0",
+  "description": "Libraries & utilities used by Swoop",
+  "engines": {
+    "node": ">=10"
+  },
+  "homepage": "https://swoop.exchange",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harmony-one/swoop-utils"
+  },
+  "files": [
+    "build",
+    "contracts"
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "prettier": "^2.1.2",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3",
+    "tslib": "^2.0.1",
+    "@harmony-js/core": "^0.1.54",
+    "dotenv": "^8.2.0"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "lint": "yarn prettier **/*.ts --check",
+    "lint:fix": "yarn prettier **/*.ts --write"
+  },
+  "license": "GPL-3.0-or-later"
+}

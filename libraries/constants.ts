@@ -1,0 +1,2 @@
+export const DEFAULT_GAS_LIMIT = 6721900
+export const DEFAULT_GAS_PRICE = 1000000000
