@@ -9,7 +9,7 @@ require('dotenv').config()
 export class NetworkEnv extends Network {
   accounts!: { [id: string]: Account } | null
 
-  constructor(network: string, envGasLimit: string | undefined = process.env.GAS_PRICE, envGasPrice: string | undefined  = process.env.GAS_LIMIT) {
+  constructor(network: string, envGasLimit: string | undefined = process.env.GAS_LIMIT, envGasPrice: string | undefined  = process.env.GAS_PRICE) {
     var gasLimit: number = DEFAULT_GAS_LIMIT;
     var gasPrice: number = DEFAULT_GAS_PRICE;
 

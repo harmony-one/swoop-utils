@@ -32,8 +32,7 @@
     "build": "tsdx build",
     "start": "tsdx watch",
     "test": "tsdx test",
-    "prepare": "yarn build",
-    "prepublishOnly": "yarn lint:fix && yarn lint"
+    "prepublishOnly": "tsdx build"
   },
   "license": "GPL-3.0-or-later"
 }
