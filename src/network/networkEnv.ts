@@ -2,11 +2,11 @@ import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from '../constants'
 import { Network } from './network'
 import { Account } from './account'
 
-const { Contract } = require('@harmony-js/contract')
+export const { Contract } = require('@harmony-js/contract')
 
 require('dotenv').config()
 
-class NetworkEnv extends Network {
+export class NetworkEnv extends Network {
   accounts!: { [id: string]: Account } | null
 
   constructor(network: string, envGasLimit: string | undefined = process.env.GAS_PRICE, envGasPrice: string | undefined  = process.env.GAS_LIMIT) {
