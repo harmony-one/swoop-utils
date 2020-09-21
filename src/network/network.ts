@@ -1,4 +1,4 @@
-import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from './constants'
+import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from '../constants'
 
 const { Harmony } = require('@harmony-js/core')
 const { ChainID, ChainType } = require('@harmony-js/utils')
@@ -11,14 +11,14 @@ export class Network {
   explorerUrl!: string
   chainType: typeof ChainType
   chainId: typeof ChainID
-  gasPrice: number
   gasLimit: number
+  gasPrice: number
 
   constructor(network: string, gasLimit: number = DEFAULT_GAS_LIMIT, gasPrice: number = DEFAULT_GAS_PRICE) {
     this.network = network.toLowerCase()
-    this.gasPrice = gasLimit
-    this.gasLimit = gasPrice
-
+    this.gasLimit = gasLimit
+    this.gasPrice = gasPrice
+    
     this.setNetworkOptions()
     this.setClient()
   }

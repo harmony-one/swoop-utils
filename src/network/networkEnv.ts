@@ -1,4 +1,4 @@
-import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from './constants'
+import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from '../constants'
 import { Network } from './network'
 import { Account } from './account'
 
@@ -9,8 +9,19 @@ require('dotenv').config()
 class NetworkEnv extends Network {
   accounts!: { [id: string]: Account } | null
 
-  constructor(network: string, gasLimit: number = DEFAULT_GAS_LIMIT, gasPrice: number = DEFAULT_GAS_PRICE) {
-    super(network, gasPrice, gasLimit)
+  constructor(network: string, envGasLimit: string | undefined = process.env.GAS_PRICE, envGasPrice: string | undefined  = process.env.GAS_LIMIT) {
+    var gasLimit: number = DEFAULT_GAS_LIMIT;
+    var gasPrice: number = DEFAULT_GAS_PRICE;
+
+    if (envGasLimit != null && envGasLimit != '') {
+      gasLimit = +envGasLimit;
+    }
+
+    if (envGasPrice != null && envGasPrice != '') {
+      gasPrice = +envGasPrice;
+    }
+
+    super(network, gasLimit, gasPrice)
 
     this.setAccounts()
   }
