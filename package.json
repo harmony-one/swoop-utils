@@ -1,6 +1,6 @@
 {
   "name": "@harmony-swoop/utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "🧰 Common libraries, utilities and abstractions used by the Swoop project",
   "engines": {
     "node": ">=10"
@@ -16,16 +16,15 @@
     "dist"
   ],
   "module": "dist/utils.esm.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@harmony-js/core": "^0.1.54",
     "dotenv": "^8.2.0",
     "prettier": "^2.1.2",
     "ts-node": "^9.0.0",
+    "tsdx": "^0.13.3",
     "tslib": "^2.0.1",
-    "typescript": "^4.0.3",
-    "tsdx": "^0.13.3"
+    "typescript": "^4.0.3"
   },
   "scripts": {
     "lint": "yarn prettier **/*.ts --check",
