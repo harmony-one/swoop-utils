@@ -1,6 +1,6 @@
 {
   "name": "@harmony-swoop/utils",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "🧰 Common libraries, utilities and abstractions used by the Swoop project",
   "engines": {
     "node": ">=10"
@@ -32,7 +32,8 @@
     "build": "tsdx build",
     "start": "tsdx watch",
     "test": "tsdx test",
-    "prepublishOnly": "tsdx build"
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn lint:fix && yarn lint"
   },
   "license": "GPL-3.0-or-later"
 }
