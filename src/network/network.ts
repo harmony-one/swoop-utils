@@ -1,8 +1,8 @@
 import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from '../constants'
 
-const { Harmony } = require('@harmony-js/core')
-const { ChainID, ChainType } = require('@harmony-js/utils')
-const { Contract } = require('@harmony-js/contract')
+export const { Harmony } = require('@harmony-js/core')
+export const { ChainID, ChainType } = require('@harmony-js/utils')
+export const { Contract } = require('@harmony-js/contract')
 
 export class Network {
   client: typeof Harmony
