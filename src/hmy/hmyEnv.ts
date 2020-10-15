@@ -1,8 +1,7 @@
 import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from '../constants'
 import { Hmy } from './hmy'
 import { Account } from './account'
-
-export const { Contract } = require('@harmony-js/contract')
+import { Contract } from '@harmony-js/contract'
 
 export class HmyEnv extends Hmy {
   accounts!: { [id: string]: Account } | null
