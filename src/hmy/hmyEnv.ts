@@ -4,26 +4,38 @@ import { Account } from './account'
 
 export const { Contract } = require('@harmony-js/contract')
 
-require('dotenv').config()
-
 export class HmyEnv extends Hmy {
   accounts!: { [id: string]: Account } | null
+  dotEnvSupported!: boolean
 
-  constructor(network: string, envGasLimit: string | undefined = process.env.GAS_LIMIT, envGasPrice: string | undefined  = process.env.GAS_PRICE) {
-    var gasLimit: number = DEFAULT_GAS_LIMIT;
-    var gasPrice: number = DEFAULT_GAS_PRICE;
+  constructor(network: string, gasLimit: number = DEFAULT_GAS_LIMIT, gasPrice: number = DEFAULT_GAS_PRICE) {
+    let dotEnvSupport = false
 
-    if (envGasLimit != null && envGasLimit != '') {
-      gasLimit = +envGasLimit;
+    try {
+      require('dotenv').config()
+
+      let envGasLimit = process.env.GAS_LIMIT
+      let envGasPrice = process.env.GAS_PRICE
+
+      if (envGasLimit != null && envGasLimit !== '') {
+        gasLimit = +envGasLimit;
+      }
+  
+      if (envGasPrice != null && envGasPrice !== '') {
+        gasPrice = +envGasPrice;
+      }
+
+      dotEnvSupport = true
     }
-
-    if (envGasPrice != null && envGasPrice != '') {
-      gasPrice = +envGasPrice;
-    }
+    catch (e) {}
 
     super(network, gasLimit, gasPrice)
 
-    this.setAccounts()
+    this.dotEnvSupported = dotEnvSupport
+
+    if (this.dotEnvSupported) {
+      this.setAccounts()
+    }
   }
 
   private setAccounts(): void {
