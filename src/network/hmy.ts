@@ -4,7 +4,7 @@ export const { Harmony } = require('@harmony-js/core')
 export const { ChainID, ChainType } = require('@harmony-js/utils')
 export const { Contract } = require('@harmony-js/contract')
 
-export class Network {
+export class Hmy {
   client: typeof Harmony
   network: string
   url!: string
@@ -70,8 +70,8 @@ export class Network {
 
   public gasOptionsForEstimation(): any {
    return {
-      gasPrice: '0x' + this.gasPrice.toString(16),
-      gasLimit: '0x' + this.gasLimit.toString(16),
+      gasPrice: `0x${this.gasPrice.toString(16)}`,
+      gasLimit: `0x${this.gasLimit.toString(16)}`,
     }
   }
 
