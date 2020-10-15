@@ -2,6 +2,8 @@ import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from '../constants'
 import { Harmony } from '@harmony-js/core'
 import { ChainID, ChainType } from '@harmony-js/utils'
 import { Contract } from '@harmony-js/contract'
+import { readFileSync } from 'fs'
+import * as path from 'path';
 
 export class Hmy {
   client!: any
@@ -96,13 +98,18 @@ export class Hmy {
     return currentBlockNumber
   }
 
-  public loadContract(path: string, address: string, privateKey: string): typeof Contract | null {
+  public loadContract(contractPath: string, address: string, privateKey: string | undefined): typeof Contract | null {
     let contract = null
 
-    if (privateKey != '') {
-      const contractJson = require(path)
+    if (contractPath !== '') {
+      contractPath = !contractPath.startsWith('.') ? `node_modules/${contractPath}` : contractPath;
+      contractPath = path.resolve(contractPath)
+      const contractJson = JSON.parse(readFileSync(contractPath, 'utf8'))
       contract = this.client.contracts.createContract(contractJson.abi, address)
-      contract.wallet.addByPrivateKey(privateKey)
+
+      if (privateKey && privateKey !== '') {
+        contract.wallet.addByPrivateKey(privateKey)
+      }
     }
 
     return contract
