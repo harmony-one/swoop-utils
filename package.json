@@ -1,6 +1,6 @@
 {
   "name": "@harmony-swoop/utils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "🧰 Common libraries, utilities and abstractions used by the Swoop project",
   "engines": {
     "node": ">=10"
@@ -18,7 +18,8 @@
   "module": "dist/utils.esm.js",
   "dependencies": {},
   "devDependencies": {
-    "@harmony-js/core": "^0.1.54",
+    "@harmony-js/core": "^0.1.55",
+    "@types/node": "^14.11.8",
     "dotenv": "^8.2.0",
     "prettier": "^2.1.2",
     "ts-node": "^9.0.0",
