@@ -68,6 +68,13 @@ export class Network {
     }
   }
 
+  public gasOptionsForEstimation(): any {
+   return {
+      gasPrice: '0x' + this.gasPrice.toString(16),
+      gasLimit: '0x' + this.gasLimit.toString(16),
+    }
+  }
+
   public getBech32Address(address: string): string {
     return this.client.client.crypto.getAddress(address).bech32
   }
