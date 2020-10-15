@@ -4,7 +4,7 @@ export const { Harmony } = require('@harmony-js/core')
 export const { ChainID, ChainType } = require('@harmony-js/utils')
 export const { Contract } = require('@harmony-js/contract')
 
-export class Network {
+export class Hmy {
   client: typeof Harmony
   network: string
   url!: string
