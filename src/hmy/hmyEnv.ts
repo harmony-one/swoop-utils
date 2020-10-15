@@ -2,9 +2,10 @@ import { DEFAULT_GAS_LIMIT, DEFAULT_GAS_PRICE } from '../constants'
 import { Hmy } from './hmy'
 import { Account } from './account'
 
-export const { Contract } = require('@harmony-js/contract')
+import * as dotenv from "dotenv";
+dotenv.config()
 
-require('dotenv').config()
+export const { Contract } = require('@harmony-js/contract')
 
 export class HmyEnv extends Hmy {
   accounts!: { [id: string]: Account } | null
