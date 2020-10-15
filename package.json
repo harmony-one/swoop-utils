@@ -1,6 +1,6 @@
 {
   "name": "@harmony-swoop/utils",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "🧰 Common libraries, utilities and abstractions used by the Swoop project",
   "engines": {
     "node": ">=10"
