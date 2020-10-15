@@ -70,8 +70,8 @@ export class Hmy {
 
   public gasOptionsForEstimation(): any {
    return {
-      gasPrice: '0x' + this.gasPrice.toString(16),
-      gasLimit: '0x' + this.gasLimit.toString(16),
+      gasPrice: `0x${this.gasPrice.toString(16)}`,
+      gasLimit: `0x${this.gasLimit.toString(16)}`,
     }
   }
 
