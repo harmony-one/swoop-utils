@@ -98,7 +98,7 @@ export class Hmy {
     return currentBlockNumber
   }
 
-  public loadContract(contractPath: string, address: string, privateKey: string | undefined): typeof Contract | null {
+  public loadContract(contractPath: string, address: string, privateKey: string | null | undefined): typeof Contract | null {
     let contract = null
 
     if (contractPath !== '') {

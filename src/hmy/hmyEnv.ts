@@ -54,9 +54,7 @@ export class HmyEnv extends Hmy {
         privateKey = privateKeyType
     }
 
-    if (privateKey != null && privateKey != '') {
-      contract = super.loadContract(path, address, privateKey)
-    }
+    contract = super.loadContract(path, address, privateKey)
 
     return contract
   }
