@@ -136,7 +136,7 @@ export class OneWallet extends AbstractWallet {
       } catch (err) {
         if (err.type === "locked") {
           alert("Your OneWallet is locked! Please unlock it and try again!");
-          return Promise.reject();
+          return Promise.reject(err);
         } else if (err.type === "networkError") {
           // This happens when there's local storage data available after a browser shutdown
           // Despite local storage data being available, when txs are signed a sign in still need to have happened
@@ -154,7 +154,7 @@ export class OneWallet extends AbstractWallet {
           }
 
         } else {
-          return Promise.reject();
+          return Promise.reject(err);
         }
       }
     };

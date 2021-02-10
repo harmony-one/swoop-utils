@@ -18,7 +18,7 @@
   "module": "dist/utils.esm.js",
   "dependencies": {},
   "devDependencies": {
-    "@harmony-js/core": "^0.1.55",
+    "@harmony-js/core": "^0.1.56",
     "@types/dotenv": "^8.2.0",
     "@types/node": "^14.11.8",
     "dotenv": "^8.2.0",
